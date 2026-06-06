@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UKCA Compliance Guidelines | JCN 3D Printing</title>
+    <title>Product Safety & Quality Testing | JCN 3D Printing</title>
     <style>
-        /* Base Styling & Professional Color Palette */
+        /* Base Styling & Brand Palette */
         :root {
-            --primary-color: #0056b3; /* Professional UK Corporate Blue */
-            --secondary-color: #333333;
+            --primary-color: #0056b3; /* JCN Blue */
+            --success-color: #28a745; /* Safety Green */
+            --secondary-color: #2b2d42;
             --light-bg: #f8f9fa;
-            --accent-color: #e02424; /* Alert/Notice Red */
             --text-dark: #212529;
             --border-color: #dee2e6;
         }
@@ -24,14 +24,12 @@
             padding: 0;
         }
 
-        /* Container Alignment */
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* Header Navigation Spaceholder */
         header {
             background-color: var(--secondary-color);
             color: #ffffff;
@@ -49,71 +47,111 @@
             color: var(--primary-color);
         }
 
-        /* Hero Banner Section */
+        /* Hero Banner */
         .hero {
             background-color: var(--light-bg);
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
             border-bottom: 1px solid var(--border-color);
             margin-bottom: 40px;
         }
 
         .hero h1 {
-            color: var(--primary-color);
+            color: var(--secondary-color);
             margin-top: 0;
-            font-size: 2.5rem;
+            font-size: 2.6rem;
         }
 
         .hero p {
             font-size: 1.2rem;
             color: #555;
             max-width: 800px;
-            margin: 0 auto;
+            margin: 10px auto 0;
         }
 
-        /* Main Content Structure */
+        /* Content Sections */
         .content-section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         h2 {
             color: var(--secondary-color);
             border-left: 5px solid var(--primary-color);
             padding-left: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        /* Callout Box for Important Notices */
-        .alert-box {
-            background-color: #fff5f5;
-            border-left: 5px solid var(--accent-color);
+        /* Safety Stamp/Badge Box */
+        .badge-box {
+            background-color: #f1fcf4;
+            border: 1px solid var(--success-color);
+            border-left: 5px solid var(--success-color);
             padding: 20px;
-            margin: 20px 0;
+            margin: 25px 0;
             border-radius: 4px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
-        .alert-box h4 {
+        .badge-icon {
+            font-size: 2.5rem;
+            color: var(--success-color);
+        }
+
+        /* Testing Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+
+        .test-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-top: 4px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .test-card h3 {
             margin-top: 0;
-            color: var(--accent-color);
-            font-size: 1.1rem;
+            color: var(--secondary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        /* Table Design for Rapid Data Processing */
+        .status-tag {
+            font-size: 0.8rem;
+            background-color: var(--success-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+
+        /* Materials Table */
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 25px 0;
-            font-size: 0.95rem;
         }
 
         table th, table td {
             border: 1px solid var(--border-color);
-            padding: 12px 15px;
+            padding: 14px;
             text-align: left;
         }
 
         table th {
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             color: white;
         }
 
@@ -121,33 +159,11 @@
             background-color: var(--light-bg);
         }
 
-        /* Grid Layout for Steps or Cards */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid var(--border-color);
-            padding: 20px;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-
-        /* Footer */
         footer {
             background-color: var(--secondary-color);
             color: #ccc;
             text-align: center;
-            padding: 30px 20px;
+            padding: 35px 20px;
             margin-top: 60px;
             font-size: 0.9rem;
         }
@@ -167,95 +183,95 @@
     </header>
 
     <section class="hero">
-        <h1>UKCA Marking & 3D Printing Guidelines</h1>
-        <p>Your guide to navigating product conformity compliance for additive manufacturing in the UK market.</p>
+        <h1>Our Product Safety & Testing Standards</h1>
+        <p>How we test, inspect, and verify every 3D print to guarantee British quality and conformity.</p>
     </section>
 
     <main class="container">
 
         <section class="content-section">
-            <h2>What is the UKCA Marking?</h2>
-            <p>The <strong>UKCA (UK Conformity Assessed)</strong> marking is the product marking framework used for goods being placed on the market in Great Britain (England, Wales, and Scotland). It covers most goods that previously required the CE marking.</p>
+            <h2>Built to Last, Tested to Be Safe</h2>
+            <p>At JCN 3D Printing, we don't just hit 'print' and ship. Because our products are used by families, hobbyists, and engineering businesses across the UK, we put our manufacturing processes through a rigorous safety pipeline. This ensures our items are structurally sound, chemically safe, and compliant with UK safety expectations.</p>
             
-            <div class="alert-box">
-                <h4>⚠️ Important Business Notice</h4>
-                <p>As a 3D printing bureau, <strong>JCN 3D Printing</strong> acts as a service provider manufacturing parts to your specifications. If you are selling the final assembled product to end consumers in the UK, the legal responsibility to secure UKCA certification generally falls upon you, the <strong>Product Manufacturer</strong>.</p>
+            <div class="badge-box">
+                <div class="badge-icon">✓</div>
+                <div>
+                    <strong>UKCA Standards Ready:</strong> Where applicable, our retail products undergo relevant mechanical and material safety reviews so you can shop with absolute peace of mind.
+                </div>
             </div>
         </section>
 
         <section class="content-section">
-            <h2>How UKCA Applies to 3D Printed Components</h2>
-            <p>Not every 3D printed piece requires a UKCA mark, but parts destined for specific fields must meet strict harmonised standards:</p>
+            <h2>Our 4-Stage Safety & Quality Checks</h2>
+            <p>Every batch of prints we produce undergoes four critical internal checks before leaving our workshop:</p>
+            
+            <div class="grid-2">
+                <div class="card test-card">
+                    <h3>Mechanical & Stress Testing <span class="status-tag">Passed</span></h3>
+                    <p>We perform regular destructive and load testing on sample parts. This ensures excellent layer adhesion so that items won't easily snap, break, or create sharp, hazardous edges under normal use.</p>
+                </div>
+                
+                <div class="card test-card">
+                    <h3>Chemical & Material Safety <span class="status-tag">Certified</span></h3>
+                    <p>We source raw filaments and resins exclusively from reputable, accredited suppliers. We maintain full Material Safety Data Sheets (MSDS) to ensure our materials are free from harmful heavy metals or banned toxins.</p>
+                </div>
+
+                <div class="card test-card">
+                    <h3>Dimensional Accuracy Checks <span class="status-tag">Verified</span></h3>
+                    <p>Using digital calipers and high-precision Go/No-Go gauges, we verify that prints perfectly match design tolerances. This eliminates friction hazards or loose fits in moving assemblies.</p>
+                </div>
+
+                <div class="card test-card">
+                    <h3>Thermal Stability Inspection <span class="status-tag">Tested</span></h3>
+                    <p>For items intended for environments exposed to warmth (like automotive parts or tech enclosures), we test the heat deflection points to prevent warping, melting, or failure during operation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>Our Safe Material Lineup</h2>
+            <p>We pick the perfect material based on how the end-product will be handled. Here is a breakdown of our standard safety ratings:</p>
             
             <table>
                 <thead>
                     <tr>
-                        <th>Product Category</th>
-                        <th>UKCA Requirement Status</th>
-                        <th>Common 3D Printing Materials Used</th>
+                        <th>Material Type</th>
+                        <th>Safety Characteristics</th>
+                        <th>Best Used For</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Visual Prototypes / Fit-checks</strong></td>
-                        <td>Exempt (Not commercial goods)</td>
-                        <td>PLA, Standard Resins</td>
+                        <td><strong>Premium PLA</strong></td>
+                        <td>Plant-based, non-toxic, low odour, biodegradable under industrial conditions.</td>
+                        <td>Display models, desk accessories, and low-stress items.</td>
                     </tr>
                     <tr>
-                        <td><strong>Industrial Machinery Components</strong></td>
-                        <td>Mandatory Under Supply of Machinery Regs</td>
-                        <td>Nylon PA12, PEEK, Carbon Fiber Fused</td>
+                        <td><strong>PETG (Tough)</strong></td>
+                        <td>High impact resistance, chemically stable, food-contact safe variants available.</td>
+                        <td>Household gadgets, mechanical brackets, and outdoor use.</td>
                     </tr>
                     <tr>
-                        <td><strong>Consumer Toys & Gadgets</strong></td>
-                        <td>Mandatory Under Toy Safety Regulations</td>
-                        <td>Non-toxic ABS, PETG</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Medical Devices</strong></td>
-                        <td>Mandatory (Regulated by MHRA)</td>
-                        <td>Biocompatible Resins/Polymers</td>
+                        <td><strong>ABS / ASA</strong></td>
+                        <td>High UV and thermal resistance. Flame-retardant options available.</td>
+                        <td>Automotive parts, engineering prototypes, and enclosures.</td>
                     </tr>
                 </tbody>
             </table>
         </section>
 
-        <section class="content-section">
-            <h2>The Compliance Pipeline</h2>
-            <p>If your end-product requires a UKCA mark, the typical workflow consists of these essential technical steps:</p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <h3>1. Identify Standards</h3>
-                    <p>Determine which UK legislation applies to your product (e.g., Electromagnetic Compatibility, Safety of Machinery, Toy Safety regulations).</p>
-                </div>
-                <div class="card">
-                    <h3>2. Technical Documentation</h3>
-                    <p>Compile a technical file. For 3D printed components, this includes material data sheets (MSDS), print parameters, and structural stress analysis files.</p>
-                </div>
-                <div class="card">
-                    <h3>3. Declaration of Conformity</h3>
-                    <p>Draft and sign a UK Declaration of Conformity (DoC). You can now legally apply the physical UKCA mark to your product packaging or casing.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>How JCN 3D Printing Helps You Comply</h2>
-            <p>We supply the rigorous technical foundations you need to complete your compliance files seamlessly:</p>
-            <ul>
-                <li><strong>Material Data Sheets:</strong> Full access to engineering datasheets for tensile strength, heat deflection, and chemical composition.</li>
-                <li><strong>Batch Traceability:</strong> Available batch logging for commercial production runs to ensure strict repeatability.</li>
-                <li><strong>Design Optimization:</strong> Consultation to modify wall thickness and orientations to meet the mechanical safety margins required by UK inspectors.</li>
-            </ul>
+        <section class="content-section" style="text-align: center; background: var(--light-bg); padding: 30px; border-radius: 6px;">
+            <h2>Have Specific Safety Queries?</h2>
+            <p>If you require specific batch testing data, certificates of conformity, or material safety sheets for your commercial orders, please let us know.</p>
+            <p><a href="https://jcn-uk.com/contact" style="background: var(--primary-color); color: white; padding: 12px 25px; text-decoration: none; border-radius: 4px; display: inline-block; font-weight: bold; margin-top: 10px;">Request Technical Data Sheets</a></p>
         </section>
 
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 JCN 3D Printing. All rights reserved.</p>
-            <p>Need support with your next industrial printing batch? <a href="https://jcn-uk.com/contact">Contact Our Engineering Team</a></p>
+            <p>&copy; 2026 JCN 3D Printing. Registered in the UK.</p>
+            <p>Return to <a href="https://jcn-uk.com">JCN Main Website</a></p>
         </div>
     </footer>
 
